@@ -19,6 +19,17 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+
+  // Global error widget override for friendlier error display
+  ErrorWidget.builder = (FlutterErrorDetails details) {
+    return Center(
+      child: Text(
+        'Oops! Widget error:\n\n${details.exceptionAsString()}',
+        style: TextStyle(color: Colors.red, fontSize: 16),
+        textAlign: TextAlign.center,
+      ),
+    );
+  };
   
   runApp(const ProviderScope(child: ShortVideoApp()));
 }

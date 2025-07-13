@@ -42,10 +42,12 @@ dependencies:
   cloud_firestore:
   firebase_storage: ^12.4.9
   path_provider: ^2.1.2
+
   dio: ^5.4.0
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   connectivity_plus:
+  battery_plus: ^4.0.0
   image_picker: ^1.0.7
   camera: ^0.10.5+2
   video_compress: ^3.1.2
