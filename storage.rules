@@ -1,0 +1,14 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Allow read/write access to videos
+    match /videos/{videoId} {
+      allow read, write: if true; // For development - change to authenticated users in production
+    }
+    
+    // Allow read/write access to thumbnails
+    match /thumbnails/{thumbnailId} {
+      allow read, write: if true; // For development - change to authenticated users in production
+    }
+  }
+} 

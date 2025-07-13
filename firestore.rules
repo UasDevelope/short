@@ -1,0 +1,14 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow read/write access to videos collection
+    match /videos/{videoId} {
+      allow read, write: if true; // For development - change to authenticated users in production
+    }
+    
+    // Allow read/write access to users collection
+    match /users/{userId} {
+      allow read, write: if true; // For development - change to authenticated users in production
+    }
+  }
+} 
